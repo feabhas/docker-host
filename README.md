@@ -113,4 +113,4 @@ To run the application without debugging:
 To run with debugging:
 
    * set a breakpoint in the code
-   * press F5 (or run **Debug** task **(gdb) Launch**)
+   * press F5 (or run **Debug** task **Debug Application**)
