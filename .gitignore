@@ -1,11 +1,24 @@
-# Prerequisites
+# IDE/host artifacts
+.idea/
+.DS_Store
+Thumbs.db
+.sconsign.dblite
+
+# Working areas and files
+dist/
+build/
+out/
+*.log
 *.d
+TEST*.xml
 
 # Compiled Object files
 *.slo
 *.lo
 *.o
 *.obj
+*.su
+*.py[cod]
 
 # Precompiled Headers
 *.gch
@@ -15,10 +28,6 @@
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
