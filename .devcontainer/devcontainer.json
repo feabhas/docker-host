@@ -14,7 +14,7 @@
     },
     
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [ 7777, 8888 ],
+    "forwardPorts": [ ],
 
     // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
     // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
@@ -30,8 +30,14 @@
     },
 
     // Uncomment the next line to run commands after the container is created - for example installing curl.
-    "onCreateCommand": "mv ../projects/cmake-host/README.md ../projects/cmake-host/README-host.md",
-    "postCreateCommand": "cp -r ../projects/cmake-host/* .; rm -rf .git*",
+    "onCreateCommand": {
+        "readme": "mv ../projects/cmake-host/README.md ../projects/cmake-host/README-host.md"
+    },
+    "postCreateCommand": {
+        "sources": "mkdir -p include src",
+        "clone": "cp -r $(ls -d ../projects/cmake-host/* | grep -Ev '/?(src|include)/?$') .",
+        "git": "rm -rf .git*"
+    },
     
     // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "feabhas"
