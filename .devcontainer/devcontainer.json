@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-existing-dockerfile
 {
-    "name": "Feabhas Docker project for C++17",
+    "name": "Feabhas Docker project C/C++ host based courses",
 
     "image": "feabhas/ubuntu-projects:latest",
 

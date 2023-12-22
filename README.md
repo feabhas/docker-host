@@ -1,4 +1,17 @@
-# Feabhas Docker Training Project
+# Feabhas Docker Host base C/C++ Training Project
+
+**Contents**
+- [Feabhas Docker Host base C/C++ Training Project](#feabhas-docker-host-base-cc-training-project)
+- [Getting Started](#getting-started)
+- [Building an Application](#building-an-application)
+- [Building an exercise solution](#building-an-exercise-solution)
+- [Creating the template starter projects](#creating-the-template-starter-projects)
+- [Running an Application](#running-an-application)
+- [Static analysis using clang-tidy](#static-analysis-using-clang-tidy)
+- [Testing support](#testing-support)
+- [C/C++ Versions](#cc-versions)
+- [C++20 Modules](#c20-modules)
+- [Disclaimer](#disclaimer)
 
 # Getting Started
 
@@ -24,10 +37,10 @@ When VS Code opens the folder this will download a Docker container from
 `feabhas/docker-projects:latest`. This container is configured with a
 toolchain for building Feabhas embedded training projects including:
 
-   * Host based GCC 11.2 and GDB
-   * Build tools GNU Make and CMake 2.23
+   * Host based GCC and GDB
+   * Build tools GNU Make, Ninja and CMake
 
-The container is about 2GB and will take a noticeable amount 
+The container is about 3GB and will take a noticeable amount 
 of time to download.
 
 VS Code will connect to the remote container as user `feabhas` (password
@@ -131,7 +144,7 @@ project are moved to a `project` sub-folder as they are no longer required.
 For each exercise you can now open the appropriate sub-project
 folder and work within that folder to build and run your application.
 
-# Runing an Application
+# Running an Application
 
 To run the application without debugging:
 
@@ -160,7 +173,7 @@ and uncomment the line starting with `set(CMAKE_CXX_CLANG_TIDY`.
 # Testing support
 
 Create a sub-directory called `tests` with it's own `CMakeList.txt` and define
-yoru test suite (you don't need to include `enable_testing()` as this is done
+your test suite (you don't need to include `enable_testing()` as this is done
 in the project root config).
 
 Invoke the tests by adding the `test` option to the build command:
@@ -181,7 +194,7 @@ sure you run a `./build.sh reset` to regenerate the build scripts.
 The build system supports compiling against different versions of C and C++ with the 
 default set in `MakeLists.txt` as C11 and C++17. The `build.sh` and `build-one.sh` scripts
 accept a version option to choose a different language option. To compile against C99 add 
-the optiuon `--c99 (or --C99) or for C++20 add --cpp20 (or --c++20 --C++20 --CPP20).
+the option `--c99 (or --C99) or for C++20 add --cpp20 (or --c++20 --C++20 --CPP20).
 
 # C++20 Modules
 
